@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sh """zip target.zip mybash.sh
-                      ll
+                      ls -a
                    """
             }
         }
