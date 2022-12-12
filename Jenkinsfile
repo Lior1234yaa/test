@@ -7,7 +7,7 @@ pipeline {
                 // add test if file exist
                 echo 'Testing..'
                 sh "cat mybash.sh"
-                sh "ls -a | grep 'dddd.sh'"
+                sh "ls -a | grep 'mybash.sh'"
             }
         }
         stage('Deploy') {
