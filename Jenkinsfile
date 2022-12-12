@@ -13,10 +13,15 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh """zip target.zip mybash.sh
-                      ls -a
-                   """
+                sh "zip target.zip mybash.sh"
             }
         }
+        stage('build') {
+            steps {
+                echo 'build....'
+                sh "ls -a"
+            }
+        }
+
     }
 }
