@@ -13,6 +13,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                sh """zip target.zip mybash.sh
+                      ll
+                   """
             }
         }
     }
