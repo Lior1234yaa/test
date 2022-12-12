@@ -10,15 +10,16 @@ pipeline {
                 sh "ls -a | grep 'mybash.sh'"
             }
         }
-        stage('Deploy') {
+        stage('Build') {
             steps {
-                echo 'Deploying....'
+                // build kit
+                echo 'Build....'
                 sh "zip target.zip mybash.sh"
             }
         }
-        stage('build') {
+        stage('DeployToNexsus') {
             steps {
-                echo 'build....'
+                echo 'Deploy....'
                 sh "ls -a"
             }
         }
