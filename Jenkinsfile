@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Testing..'
                 sh "cat mybash.sh"
-                sh "ls -a
+                sh "ls -a"
             }
         }
         stage('Deploy') {
