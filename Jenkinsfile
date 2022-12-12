@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo 'Deploy....'
                 sh "ls -a"
-                println ${BUILD_NUMBER}
+                println BUILD_NUMBER
             }
         }
 
