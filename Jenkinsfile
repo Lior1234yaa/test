@@ -16,7 +16,7 @@ pipeline {
                 echo 'Build....'
                 sh "zip target.zip mybash.sh"
                 sh "ls -a"
-                sh "unzip target.zip -d /var"
+                sh "sudo unzip target.zip -d /var"
                 sh "ls -a"
             }
         }
