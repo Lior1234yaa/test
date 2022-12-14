@@ -38,7 +38,7 @@ pipeline {
                 // sh "ls -a"
             }
         }
-        stage('clean') {
+        stage('clean2') {
             steps {
                 cleanWs();
             }
