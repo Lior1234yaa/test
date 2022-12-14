@@ -1,5 +1,6 @@
 pipeline {
     agent any
+
     stages {
         stage('Test') {
             steps {
@@ -19,25 +20,23 @@ pipeline {
         }
         stage('DeployToNexsus') {
             steps {
-                // can't updet nexus
+                // can't
                 echo 'Deploy....'
                 println "build number:${BUILD_NUMBER}"
             }
         }
         stage('Cd') {
+            steps {
                 echo 'Cd....'
-                // get kit in format zip from nexus
                 sh "curl -v -u admin:Ly0544209855 http://ec2-18-235-234-126.compute-1.amazonaws.com:8081/repository/maven-public/mytest/test/1.0/test-1.0.zip -L -o target${BUILD_NUMBER}.zip"
-                //un zip 
+                sh "ls -a"
                 sh "unzip target${BUILD_NUMBER}.zip"
                 sh "chmod +x -R ${env.WORKSPACE}"
-                // run
                 sh "./mybash.sh"
             }
         }
         stage('clean') {
             steps {
-                // clean WORKSPACE
                 cleanWs();
             }
         }
