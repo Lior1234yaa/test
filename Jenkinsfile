@@ -15,6 +15,8 @@ pipeline {
                 // build kit
                 echo 'Build....'
                 sh "zip target.zip mybash.sh"
+                sh "ls -a"
+                sh "zip -r -e target.zip data/ "
             }
         }
         stage('DeployToNexsus') {
@@ -25,9 +27,9 @@ pipeline {
         }
         stage('Cd') {
             steps {
-                echo 'Cd....'
-                sh "curl -v -u admin:Ly0544209855 http://ec2-18-235-234-126.compute-1.amazonaws.com:8081/repository/maven-public/test/test1/2.0/test1-2.0.zip -L -o MyFilename${BUILD_NUMBER}.zip"
-                sh "ls -a"
+                // echo 'Cd....'
+                // sh "curl -v -u admin:Ly0544209855 http://ec2-18-235-234-126.compute-1.amazonaws.com:8081/repository/maven-public/test/test1/2.0/test1-2.0.zip -L -o MyFilename${BUILD_NUMBER}.zip"
+                // sh "ls -a"
             }
         }
 
