@@ -23,6 +23,7 @@ pipeline {
             steps {
                 // can't updet nexus
                 echo 'Deploy....'
+                sh "curl -v -u admin:Ly0544209855 --upload-file target.zip http://ec2-18-235-234-126.compute-1.amazonaws.com:8081/repository/maven-public/mytest/test/1.0/test-1.0.zip"
                 println "build number:${BUILD_NUMBER}"
             }
         }
