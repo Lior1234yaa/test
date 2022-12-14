@@ -16,8 +16,6 @@ pipeline {
                 echo 'Build....'
                 sh "zip target.zip mybash.sh"
                 sh "rm -rf mybash.sh"
-                sh "unzip target.zip"
-                sh "ls -a"
             }
         }
         stage('DeployToNexsus') {
@@ -31,6 +29,8 @@ pipeline {
                 echo 'Cd....'
                 // sh "curl -v -u admin:Ly0544209855 http://ec2-18-235-234-126.compute-1.amazonaws.com:8081/repository/maven-public/test/test1/2.0/test1-2.0.zip -L -o MyFilename${BUILD_NUMBER}.zip"
                 // sh "ls -a"
+                sh "unzip target.zip"
+                sh "./mybash.sh"
             }
         }
         stage('clean2') {
