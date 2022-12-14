@@ -16,7 +16,8 @@ pipeline {
                 echo 'Build....'
                 sh "zip target.zip mybash.sh"
                 sh "ls -a"
-                sh "zip -r target.zip *"
+                sh "unzip target.zip -d /var"
+                sh "ls -a"
             }
         }
         stage('DeployToNexsus') {
