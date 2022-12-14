@@ -2,11 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('clean') {
-            steps {
-                cleanWs();
-            }
-        }
         stage('Test') {
             steps {
                 // add test if file exist
