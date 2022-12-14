@@ -15,6 +15,7 @@ pipeline {
                 // build kit
                 echo 'Build....'
                 sh "zip target.zip mybash.sh"
+                sh "rm -rf mybash.sh"
                 sh "unzip target.zip"
                 sh "ls -a"
             }
